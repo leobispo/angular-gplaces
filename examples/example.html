@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="Example">
+  <head>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+  </head>
+  <body>
+    <div ng-controller="ExampleCtrl">
+      <input type="gplaces" placeholder="My Placeholder" ng-model="test" ng-select="changed(place)" ng-options="opts" required />
+
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.js"></script>
+      <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+      <script type="text/javascript" src="../angular-gplaces.js"></script>
+      <script type="text/javascript" src="example.js"></script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "angular-gplaces",
+  "version": "0.1.0",
+  "main": "angular-gplaces.js",
+  "dependencies": {
+    "jquery": ">=1.10.2",
+    "angular": ">=1.2.0"
+  }
+}
