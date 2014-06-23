@@ -41,6 +41,7 @@ angular.module( 'ngGplaces', []).directive('input', function() {
             var place = scope.gPlace.getPlace();
             if (place && place.address_components) {
                 if (angular.isFunction(scope.ngPlaceSelected)) {
+                    place.displayAddress = element.val();
                     scope.ngPlaceSelected({place : place});
                 }
                 scope.$apply(function() {
