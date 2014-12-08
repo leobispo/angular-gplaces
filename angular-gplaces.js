@@ -38,6 +38,27 @@ angular.module( 'ngGplaces', []).directive('input', function() {
       element.val(ctrl.$viewValue);
     };
 
+    element.on("$destroy", function() {
+      var obj = scope.gPlace.gm_accessors_.place;
+
+      $.each(Object.keys(obj), function(i, key) {
+        if(typeof(obj[key]) === "object" && obj[key].hasOwnProperty("gm_accessors_")) {
+          obj = obj[key].gm_accessors_.input[key];
+          return false;
+        }
+      });
+
+      $.each(Object.keys(obj), function(i, key) {
+        if (typeof(obj[key]) === "object") {
+          if ($(obj[key]).hasClass("pac-container")) {
+            obj = obj[key];
+            $(obj).remove();
+            return false;
+          }
+        }
+      });
+    });
+
     scope.$watchCollection('ngOptions', function () {
       var opts = scope.ngOptions;
       if (opts) {
